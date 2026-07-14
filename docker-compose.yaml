@@ -9,9 +9,7 @@ services:
       - SERVICE_FQDN_RESOURCESPACE_80
     volumes:
       - filestore:/var/www/html/filestore
-    networks:
-      - frontend
-      - backend
+      - config:/var/www/html/include
     expose:
       - "80"
 
@@ -23,13 +21,8 @@ services:
       - db.env
     volumes:
       - mariadb:/var/lib/mysql
-    networks:
-      - backend
-
-networks:
-  frontend:
-  backend:
 
 volumes:
   mariadb:
   filestore:
+  config:
