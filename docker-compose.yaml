@@ -10,6 +10,7 @@ services:
     volumes:
       - filestore:/var/www/html/filestore
       - config:/var/www/html/include
+      - /data/coolify/resourcespace/policy.xml:/etc/ImageMagick-6/policy.xml:ro
     expose:
       - "80"
 
